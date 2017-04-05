@@ -1,0 +1,18 @@
+{
+  "name": "3dgallery",
+  "version": "1.0.0",
+  "description": "McClatchy gallery template for 3D scans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "McClatchy",
+    "3D",
+    "gallery",
+    "360",
+    "scans"
+  ],
+  "author": "Ben Connors, Kristi Walker",
+  "license": "ISC"
+}

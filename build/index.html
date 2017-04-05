@@ -1,0 +1,67 @@
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.5.0/aframe.min.js"></script>
+	<script src="aframe-orbit-controls-component.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<style>
+	a {
+		color: #fff;
+		text-shadow: 2px 2px #000;
+	}
+
+	a:hover {
+		color: #00b3ff;
+		text-shadow: 0px 0px #000;
+	}
+</style>
+
+<body style='background-color:#000; color:#fff;'>
+	<!-- transparent wrapper -->
+	<div id="overlays-wrapper" style="z-index:100; position:absolute; background-color: rgba(0,0,0,0);  pointer-events: none; color:#fff; position:fixed; height:100%; top:0px; width:96%; left:0px; font-size:2vh;">
+		<footer style="background-color: rgba(0,0,0,0.3); position:absolute; pointer-events: auto; bottom:0px; left:0px; font-family: sans-serif; padding:8px;">For more prototypes and experiments visit <a href="http://sandbox.video">Sandbox.Video</a>
+		</footer>
+		<div id="nav" style=" position: relative;
+  top: 50%; margin:2%;
+  transform: translateY(-50%);">
+			<a id="prev" style="font-size:10vw; display:none;  margin:2%; position:; pointer-events: auto;"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+			<div style="float:right;">
+				<a id="next" style="font-size:10vw; pointer-events: auto"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- setting up empty scene, camera, lighting -->
+	<a-scene stats id="scene">
+		<!-- queues file for use in entities -->
+		<a-assets id="assets" timeout="100000">
+			<img id="first-sky" src="dunes2.jpg">
+		</a-assets>
+
+		<!-- displays dunes2.jpg -->
+		<a-sky src="#first-sky"></a-sky>
+
+		<a-entity light="type: ambient; color: #fff"></a-entity>
+
+		<!-- maybe set to false instead of reducing radius -->
+		<a-sphere id="center" visible="true" radius=".001"></a-sphere>
+
+		<!-- set target, radius, other properties for camera -->
+		<a-entity camera="" position="0 0 0" rotation="0 0 0" scale="" visible="" orbit-controls="" target="#center" distance="5" look-controls-enabled=false wasd-controls-enabled=false></a-entity>
+	</a-scene>
+
+	<script>
+
+	</script>
+
+
+	<script src="base.js"></script>
+
+</body>
+
+</html>

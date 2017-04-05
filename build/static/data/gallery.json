@@ -1,0 +1,49 @@
+[{
+    "obj": "showgallery/38.obj",
+    "mtl": "showgallery/38.mtl",
+    "texture": "showgallery/3801.jpg"
+}, {
+    "obj": "showgallery/42.obj",
+    "mtl": "showgallery/42.mtl",
+    "texture": "showgallery/4201.jpg"
+}, {
+    "obj": "showgallery/8.obj",
+    "mtl": "showgallery/8.mtl",
+    "texture": "showgallery/80101.jpg"
+}, {
+    "obj": "showgallery/17.obj",
+    "mtl": "showgallery/17.mtl",
+    "texture": "showgallery/1701.jpg"
+}, {
+    "obj": "showgallery/24.obj",
+    "mtl": "showgallery/24.mtl",
+    "texture": "showgallery/2401.jpg"
+}, {
+    "obj": "showgallery/30.obj",
+    "mtl": "showgallery/30.mtl",
+    "texture": "showgallery/3001.jpg"
+}, {
+    "obj": "showgallery/32.obj",
+    "mtl": "showgallery/32.mtl",
+    "texture": "showgallery/3201.jpg"
+}, {
+    "obj": "showgallery/37.obj",
+    "mtl": "showgallery/37.mtl",
+    "texture": "showgallery/3701.jpg"
+}, {
+    "obj": "showgallery/39.obj",
+    "mtl": "showgallery/39.mtl",
+    "texture": "showgallery/3901.jpg"
+}, {
+    "obj": "showgallery/82.obj",
+    "mtl": "showgallery/82.mtl",
+    "texture": "showgallery/8201.jpg"
+}, {
+    "obj": "showgallery/83-1.obj",
+    "mtl": "showgallery/83-1.mtl",
+    "texture": "showgallery/83-101.jpg"
+}, {
+    "obj": "showgallery/101-1.obj",
+    "mtl": "showgallery/101-1.mtl",
+    "texture": "showgallery/101-101.jpg"
+}]
