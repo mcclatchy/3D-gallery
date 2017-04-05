@@ -2,13 +2,14 @@ $(document).ready(function() {
 
     var targetModel = 1;
     var currentModel = 0;
+    var loopLength;
 
     /***************************************************************************
     Gets model playlist
     ***************************************************************************/
-    $.getdata('gallery.json', function(data) {
+    $.getJSON('static/data/gallery.json', function(data) {
         queueAssets(currentModel, data);
-        var loopLength = data.length;
+        loopLength = data.length;
 
         $('#next').click(function test() {
             targetModel = currentModel + 1;
@@ -109,10 +110,11 @@ $(document).ready(function() {
     /***************************************************************************
     - Establishes deeplinking
     ***************************************************************************/
+    var deeplink;
 
     // Gets current model number
     if (getQueryVariable('model') !== false) {
-        var deeplink = getQueryVariable('model') - 1;
+        deeplink = getQueryVariable('model') - 1;
     } else {
         deeplink = 0;
     }
