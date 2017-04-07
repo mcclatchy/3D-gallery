@@ -11,15 +11,15 @@ $(document).ready(function() {
         queueAssets(currentModel, data);
         loopLength = data.length;
 
-        $('#next').click(function test() {
+        $('#right').click(function test() {
             targetModel = currentModel + 1;
             queueAssets(targetModel, data);
-            document.getElementById("mtl" + targetModel).addEventListener("loaded", transitionModels());
+            document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
         });
-        $('#prev').click(function () {
+        $('#left').click(function () {
             targetModel = currentModel - 1;
             queueAssets(targetModel, data);
-            document.getElementById("mtl" + targetModel).addEventListener("loaded", transitionModels());
+            document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
         });
     });
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
     }
 
     /***************************************************************************
-    Animates current object out and next/prev object in
+    Animates current object out and right/left object in
     ***************************************************************************/
     function transitionModels() {
         document.querySelector('#model' + currentModel).emit('transition-out');
@@ -98,12 +98,12 @@ $(document).ready(function() {
     ***************************************************************************/
     function bookends() {
         if (targetModel + 1 == loopLength) {
-            $('#next').hide();
+            document.querySelector('#right').classList.add('inactive');
         } else if (targetModel === 0) {
-            $('#prev').hide();
+            document.querySelector('#left').classList.add('inactive');
         } else {
-            $('#next').show();
-            $('#prev').show();
+            document.querySelector('#right').classList.remove('inactive');
+            document.querySelector('#left').classList.remove('inactive');
         }
     }
 
@@ -124,9 +124,9 @@ $(document).ready(function() {
     // Gets deeplink query in URL and shows corresponding model
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
-        var vars = query.split("&");
+        var vars = query.split('&');
         for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split("=");
+            var pair = vars[i].split('=');
             if (pair[0] == variable) {
                 return pair[1];
             }

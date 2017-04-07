@@ -32,7 +32,7 @@ gulp.task('browserSync', function() {
         server: {
             baseDir: 'build'
         },
-        ghostMode: false,
+        // ghostMode: false,
     });
 });
 
