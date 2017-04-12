@@ -36,7 +36,8 @@ footer {
 
 	#left, #right {
 		pointer-events: auto;
-		opacity: 0.9;
+		opacity: 0.85;
+		text-shadow: 1px 1px 1px solid #000;
 
 		&:hover {
 			color: white;
@@ -54,4 +55,5 @@ footer {
 
 .inactive {
 	opacity: 0.2 !important;
+	cursor: auto;
 }

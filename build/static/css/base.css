@@ -32,7 +32,8 @@ footer {
   cursor: pointer; }
   #nav #left, #nav #right {
     pointer-events: auto;
-    opacity: 0.9; }
+    opacity: 0.85;
+    text-shadow: 1px 1px 1px solid #000; }
     #nav #left:hover, #nav #right:hover {
       color: white;
       opacity: 1;
@@ -43,4 +44,5 @@ footer {
     float: right; }
 
 .inactive {
-  opacity: 0.2 !important; }
+  opacity: 0.2 !important;
+  cursor: auto; }
