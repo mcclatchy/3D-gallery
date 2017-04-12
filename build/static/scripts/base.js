@@ -6,13 +6,15 @@ var loopLength;
 Gets model playlist
 ***************************************************************************/
 
+
+
 var ajax = new XMLHttpRequest();
 
 ajax.open('GET', 'static/data/gallery.json', true);
 ajax.send();
 
 ajax.onload = function (data) {
-    data = ajax.responseText;
+    data = JSON.parse(ajax.responseText);
     // results.innerHTML = e.target.response.message;
     queueAssets(currentModel, data);
     loopLength = data.length;
@@ -29,64 +31,6 @@ ajax.onload = function (data) {
     };
     console.log(data); // 'this is the returned object'
 };
-
-// var ajax = new XMLHttpRequest();
-// ajax.open('GET', 'static/data/gallery.json');
-// ajax.send(null);
-//
-// ajax.onreadystatechange = function(data) {
-//     data = ajax.responseText; // this is the returned json object
-//     var DONE = 4; // readyState 4 means the request is done.
-//     var OK = 200; // status 200 is a successful return.
-//
-//     if (ajax.readyState === DONE) {
-//         if (ajax.status === OK) {
-//             queueAssets(currentModel, data);
-//             loopLength = data.length;
-//
-//             document.querySelector('#right').onclick = function() {
-//                 targetModel = currentModel + 1;
-//                 queueAssets(targetModel, data);
-//                 document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-//             };
-//             document.querySelector('#left').onclick = function() {
-//                 targetModel = currentModel - 1;
-//                 queueAssets(targetModel, data);
-//                 document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-//             };
-//             console.log(data); // 'this is the returned object'
-//         } else {
-//             console.log('Error: ' + ajax.status); // An error occurred during the request.
-//         }
-//     }
-// };
-
-
-// $.getJSON('static/data/gallery.json', function(data) {
-//     queueAssets(currentModel, data);
-//     loopLength = data.length;
-//
-//     document.querySelector('#right').onclick = function() {
-//         targetModel = currentModel + 1;
-//         queueAssets(targetModel, data);
-//         document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-//     };
-//     document.querySelector('#left').onclick = function() {
-//         targetModel = currentModel - 1;
-//         queueAssets(targetModel, data);
-//         document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-//     };
-//     // $('#right').click(function test() {
-//     //     targetModel = currentModel + 1;
-//     //     queueAssets(targetModel, data);
-//     //     document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-//     // });
-//     // $('#left').click(function () {
-//     //     targetModel = currentModel - 1;
-//     //     queueAssets(targetModel, data);
-//     //     document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-//     // });
-// });
 
 /***************************************************************************
 - Queues assets for each model
