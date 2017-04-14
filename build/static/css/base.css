@@ -1,7 +1,3 @@
-body {
-  background-color: #000;
-  color: #fff; }
-
 #overlays-wrapper {
   background-color: transparent;
   pointer-events: none;
@@ -31,6 +27,7 @@ footer {
   font-size: 5vw;
   cursor: pointer; }
   #nav #left, #nav #right {
+    color: white;
     pointer-events: auto;
     opacity: 0.85;
     text-shadow: 1px 1px 1px solid #000; }
@@ -46,3 +43,13 @@ footer {
 .inactive {
   opacity: 0.2 !important;
   cursor: auto; }
+
+#toolbar {
+  width: 100%; }
+
+#audio-bar {
+  width: 90%;
+  height: 40px;
+  background: #222;
+  position: absolute;
+  bottom: 20px; }
