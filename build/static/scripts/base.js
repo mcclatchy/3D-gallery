@@ -19,16 +19,16 @@ ajax.onload = function (data) {
     queueAssets(currentModel, data);
     loopLength = data.length;
 
-    document.querySelector('#right').onclick = function() {
-        targetModel = currentModel + 1;
-        queueAssets(targetModel, data);
-        document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-    };
-    document.querySelector('#left').onclick = function() {
-        targetModel = currentModel - 1;
-        queueAssets(targetModel, data);
-        document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-    };
+    // document.querySelector('#right').onclick = function() {
+    //     targetModel = currentModel + 1;
+    //     queueAssets(targetModel, data);
+    //     document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
+    // };
+    // document.querySelector('#left').onclick = function() {
+    //     targetModel = currentModel - 1;
+    //     queueAssets(targetModel, data);
+    //     document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
+    // };
     console.log(data); // 'this is the returned object'
 };
 

@@ -5,18 +5,19 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="static/css/base.css"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.5.0/aframe.min.js"></script>
-	<script src="static/scripts/aframe/aframe-orbit-controls-component.min.js"></script>
+	<script src="static/scripts/libs/aframe/aframe-orbit-controls-component.min.js"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/player.css">
 </head>
 
 <body>
 	<!-- transparent wrapper -->
 	<div id="overlays-wrapper">
-		<footer>For more prototypes and experiments visit <a href="http://sandbox.video">Sandbox.Video</a></footer>
-		<div id="nav">
+		<!-- <footer>For more prototypes and experiments visit <a href="http://sandbox.video">Sandbox.Video</a></footer> -->
+		<!-- <div id="nav">
 			<a id="left" class="inactive"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 			<a id="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-		</div>
+		</div> -->
 	</div>
 	<!-- /end transparent wrapper -->
 
@@ -40,8 +41,65 @@
 	</a-scene>
 	<!-- /end scene, camera, lighting -->
 
+	<!-- Top Info -->
+
+    <!-- Controls -->
+    <div id="title">
+        <span id="track"></span>
+    </div>
+    <div id="toolbar">
+        <div id="audio-bar">
+            <div class="controlsOuter">
+                <!-- <div class="controlsInner"> -->
+                    <div id="loading"></div>
+
+                    <div id="play-pause">
+                        <div class="btn" id="playBtn"></div>
+                        <div class="btn" id="pauseBtn"></div>
+                    </div>
+
+                    <div id="scrubber">
+                        <div id="bar"></div>
+                        <div id="progress"></div>
+                    </div>
+
+                    <div class="btn" id="prevBtn"></div>
+                    <div class="btn" id="nextBtn"></div>
+                <!-- </div> -->
+                <div class="btn" id="volumeBtn"></div>
+                <div id="timer">0:00</div>
+                <div id="divider">/</div>
+                <div id="duration">0:00</div>
+                <div class="btn" id="playlistBtn"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress -->
+    <div id="waveform"></div>
+    <!-- <div id="bar"></div> -->
+
+    <!-- Playlist -->
+    <div id="playlist">
+        <div id="list"></div>
+    </div>
+
+    <!-- Volume -->
+    <div id="volume" class="fadeout">
+        <div id="barFull" class="bar"></div>
+        <div id="barEmpty" class="bar"></div>
+        <div id="sliderBtn"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/scripts/src/howler.core.js"></script>
+    <script src="static/scripts/siriwave.js"></script>
+    <script src="static/scripts/player.js"></script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
 	<script src="static/scripts/base.js"></script>
+
 
 </body>
 

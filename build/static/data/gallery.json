@@ -1,15 +1,24 @@
 [{
+    "title": "test one",
     "obj": "static/assets/show-gallery/38.obj",
     "mtl": "static/assets/show-gallery/38.mtl",
-    "texture": "static/assets/show-gallery/3801.jpg"
+    "texture": "static/assets/show-gallery/3801.jpg",
+    "audio": "80s_vibe",
+    "howl": null
 }, {
+    "title": "test two",
     "obj": "static/assets/show-gallery/42.obj",
     "mtl": "static/assets/show-gallery/42.mtl",
-    "texture": "static/assets/show-gallery/4201.jpg"
+    "texture": "static/assets/show-gallery/4201.jpg",
+    "audio": "rave_digger",
+    "howl": null
 }, {
+    "title": "test three",
     "obj": "static/assets/show-gallery/8.obj",
     "mtl": "static/assets/show-gallery/8.mtl",
-    "texture": "static/assets/show-gallery/80101.jpg"
+    "texture": "static/assets/show-gallery/80101.jpg",
+    "audio": "80s_vibe",
+    "howl": null
 }, {
     "obj": "static/assets/show-gallery/17.obj",
     "mtl": "static/assets/show-gallery/17.mtl",

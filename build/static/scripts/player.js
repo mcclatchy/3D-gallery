@@ -17,14 +17,14 @@ elms.forEach(function(elm) {
 /**
  * Player class containing the state of our playlist and where we are in it.
  * Includes all methods for playing, skipping, updating the display, etc.
- * @param {Array} playlist Array of objects with playlist song details ({title, file, howl}).
+ * @param {Array} playlist Array of objects with playlist song details ({title, audio, howl}).
  */
 var Player = function(playlist) {
   this.playlist = playlist;
   this.index = 0;
 
   // Display the title of the first track.
-  track.innerHTML = '1. ' + playlist[0].title;
+  track.innerHTML = playlist[0].title;
 
   // Setup the playlist display.
   playlist.forEach(function(song) {
@@ -55,8 +55,8 @@ Player.prototype = {
       sound = data.howl;
     } else {
       sound = data.howl = new Howl({
-        src: ['./audio/' + data.file + '.webm', './audio/' + data.file + '.mp3'],
-        html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
+        src: ['static/assets/audio/' + data.audio + '.webm', 'static/assets/audio/' + data.audio + '.mp3'],
+        html5: true, // Force to HTML5 so that the audio can stream in (best for large audios).
         onplay: function() {
           // Display the duration.
           duration.innerHTML = self.formatTime(Math.round(sound.duration()));
@@ -271,17 +271,17 @@ Player.prototype = {
 var player = new Player([
   {
     title: 'Rave Digger',
-    file: 'rave_digger',
+    audio: 'rave_digger',
     howl: null
   },
   {
     title: '80s Vibe',
-    file: '80s_vibe',
+    audio: '80s_vibe',
     howl: null
   },
   {
     title: 'Running Out',
-    file: 'running_out',
+    audio: 'running_out',
     howl: null
   }
 ]);
