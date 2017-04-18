@@ -8,27 +8,27 @@ Gets model playlist
 
 
 
-var ajax = new XMLHttpRequest();
+var ajaxModels = new XMLHttpRequest();
 
-ajax.open('GET', 'static/data/gallery.json', true);
-ajax.send();
+ajaxModels.open('GET', 'static/data/gallery.json', true);
+ajaxModels.send();
 
-ajax.onload = function (data) {
-    data = JSON.parse(ajax.responseText);
+ajaxModels.onload = function(data) {
+    data = JSON.parse(ajaxModels.responseText);
     // results.innerHTML = e.target.response.message;
     queueAssets(currentModel, data);
     loopLength = data.length;
 
-    // document.querySelector('#right').onclick = function() {
-    //     targetModel = currentModel + 1;
-    //     queueAssets(targetModel, data);
-    //     document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-    // };
-    // document.querySelector('#left').onclick = function() {
-    //     targetModel = currentModel - 1;
-    //     queueAssets(targetModel, data);
-    //     document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
-    // };
+    document.querySelector('#right').onclick = function() {
+        targetModel = currentModel + 1;
+        queueAssets(targetModel, data);
+        document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
+    };
+    document.querySelector('#left').onclick = function() {
+        targetModel = currentModel - 1;
+        queueAssets(targetModel, data);
+        document.getElementById('mtl' + targetModel).addEventListener('loaded', transitionModels());
+    };
     console.log(data); // 'this is the returned object'
 };
 

@@ -11,6 +11,12 @@
 </head>
 
 <body>
+<!-- <audio controls>
+  <source src="static/assets/audio/80s_vibe.mp3" type="audio/ogg">
+  <source src="test.mp3" type="audio/mpeg">
+  <track kind="subtitles" label="English subtitles" src="/test.vtt" srclang="en" default></track>
+  Your browser does not support the audio tag.
+</audio> -->
 	<!-- transparent wrapper -->
 	<div id="overlays-wrapper">
 		<!-- <footer>For more prototypes and experiments visit <a href="http://sandbox.video">Sandbox.Video</a></footer> -->
@@ -22,7 +28,7 @@
 	<!-- /end transparent wrapper -->
 
 	<!-- Empty scene, camera, lighting -->
-	<a-scene stats id="scene">
+	<a-scene id="scene">
 		<!-- queues file for use in entities -->
 		<a-assets id="assets" timeout="100000">
 			<img id="first-sky" src="static/assets/images/dunes2.jpg">
@@ -71,10 +77,10 @@
                 <div id="divider">/</div>
                 <div id="duration">0:00</div>
                 <div class="btn" id="playlistBtn"></div>
-
             </div>
         </div>
     </div>
+
 
     <!-- Progress -->
     <div id="waveform"></div>
@@ -82,7 +88,12 @@
 
     <!-- Playlist -->
     <div id="playlist">
-        <div id="list"></div>
+        <div id="list">
+            <div class="list-song">
+                <div class="list-thumb"></div>
+                This is a test
+            </div>
+        </div>
     </div>
 
     <!-- Volume -->

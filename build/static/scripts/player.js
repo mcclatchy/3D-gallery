@@ -27,12 +27,16 @@ var Player = function(playlist) {
   track.innerHTML = playlist[0].title;
 
   // Setup the playlist display.
-  playlist.forEach(function(song) {
+  playlist.forEach(function(audio) {
     var div = document.createElement('div');
     div.className = 'list-song';
-    div.innerHTML = song.title;
+    div.innerHTML = audio.title;
     div.onclick = function() {
-      player.skipTo(playlist.indexOf(song));
+      player.skipTo(playlist.indexOf(audio));
+
+      // STOPPED HERE, NEEDS TO CHANGE QUEUE ASSETS OR COMBINE FILES
+      queueAssets(currentModel, player);
+      loopLength = data.length;
     };
     list.appendChild(div);
   });
@@ -64,31 +68,25 @@ Player.prototype = {
           // Start upating the progress of the track.
           requestAnimationFrame(self.step.bind(self));
 
-          // Start the wave animation if we have already loaded
-          wave.container.style.display = 'block';
           // bar.style.display = 'none';
           pauseBtn.style.display = 'block';
         },
         onload: function() {
-          // Start the wave animation.
-          wave.container.style.display = 'block';
+          // Start the scrubber animation.
           bar.style.display = 'none';
           loading.style.display = 'none';
         },
         onend: function() {
-          // Stop the wave animation.
-          wave.container.style.display = 'none';
+          // Stop the scrubber animation.
           bar.style.display = 'block';
           self.skip('right');
         },
         onpause: function() {
-          // Stop the wave animation.
-          wave.container.style.display = 'none';
+          // Stop the scrubber animation.
           bar.style.display = 'block';
         },
         onstop: function() {
-          // Stop the wave animation.
-          wave.container.style.display = 'none';
+          // Stop the scrubber animation.
           bar.style.display = 'block';
         }
       });
@@ -98,7 +96,7 @@ Player.prototype = {
     sound.play();
 
     // Update the track display.
-    track.innerHTML = (index + 1) + '. ' + data.title;
+    track.innerHTML =  data.title;
 
     // Show the pause button.
     if (sound.state() === 'loaded') {
@@ -267,22 +265,75 @@ Player.prototype = {
   }
 };
 
+var ajax = new XMLHttpRequest();
+
+ajax.open('GET', 'static/data/gallery.json', true);
+ajax.send();
+
+ajax.onload = function (player) {
+    player = JSON.parse(ajax.responseText);
+    console.log(player); // 'this is the returned object'
+};
+
 // Setup our new audio player class and pass it the playlist.
 var player = new Player([
   {
-    title: 'Rave Digger',
-    audio: 'rave_digger',
-    howl: null
-  },
-  {
-    title: '80s Vibe',
-    audio: '80s_vibe',
-    howl: null
-  },
-  {
-    title: 'Running Out',
-    audio: 'running_out',
-    howl: null
+      "title": "Guywith Stash",
+      "obj": "static/assets/show-gallery/38.obj",
+      "mtl": "static/assets/show-gallery/38.mtl",
+      "texture": "static/assets/show-gallery/3801.jpg",
+      "audio": "80s_vibe",
+      "howl": null
+  }, {
+      "title": "Andy Pergam",
+      "obj": "static/assets/show-gallery/42.obj",
+      "mtl": "static/assets/show-gallery/42.mtl",
+      "texture": "static/assets/show-gallery/4201.jpg",
+      "audio": "rave_digger",
+      "howl": null
+  }, {
+      "title": "test three",
+      "obj": "static/assets/show-gallery/8.obj",
+      "mtl": "static/assets/show-gallery/8.mtl",
+      "texture": "static/assets/show-gallery/80101.jpg",
+      "audio": "80s_vibe",
+      "howl": null
+  }, {
+      "obj": "static/assets/show-gallery/17.obj",
+      "mtl": "static/assets/show-gallery/17.mtl",
+      "texture": "static/assets/show-gallery/1701.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/24.obj",
+      "mtl": "static/assets/show-gallery/24.mtl",
+      "texture": "static/assets/show-gallery/2401.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/30.obj",
+      "mtl": "static/assets/show-gallery/30.mtl",
+      "texture": "static/assets/show-gallery/3001.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/32.obj",
+      "mtl": "static/assets/show-gallery/32.mtl",
+      "texture": "static/assets/show-gallery/3201.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/37.obj",
+      "mtl": "static/assets/show-gallery/37.mtl",
+      "texture": "static/assets/show-gallery/3701.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/39.obj",
+      "mtl": "static/assets/show-gallery/39.mtl",
+      "texture": "static/assets/show-gallery/3901.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/82.obj",
+      "mtl": "static/assets/show-gallery/82.mtl",
+      "texture": "static/assets/show-gallery/8201.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/83-1.obj",
+      "mtl": "static/assets/show-gallery/83-1.mtl",
+      "texture": "static/assets/show-gallery/83-101.jpg"
+  }, {
+      "obj": "static/assets/show-gallery/101-1.obj",
+      "mtl": "static/assets/show-gallery/101-1.mtl",
+      "texture": "static/assets/show-gallery/101-101.jpg"
   }
 ]);
 
@@ -293,15 +344,15 @@ playBtn.addEventListener('click', function() {
 pauseBtn.addEventListener('click', function() {
   player.pause();
 });
-prevBtn.addEventListener('click', function() {
-  player.skip('prev');
-});
-nextBtn.addEventListener('click', function() {
-  player.skip('next');
-});
-waveform.addEventListener('click', function(event) {
-  player.seek(event.clientX / window.innerWidth);
-});
+// prevBtn.addEventListener('click', function() {
+//   player.skip('prev');
+// });
+// nextBtn.addEventListener('click', function() {
+//   player.skip('next');
+// });
+// waveform.addEventListener('click', function(event) {
+//   player.seek(event.clientX / window.innerWidth);
+// });
 scrubber.addEventListener('click', function(event) {
   player.seek(event.clientX / (scrubber.clientWidth));
 });
