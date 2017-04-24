@@ -1,31 +1,25 @@
-/*html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    outline: 0;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    background: #bb71f3;
-    background: -moz-linear-gradient(-45deg, #bb71f3 0%, #3d4d91 100%);
-    background: -webkit-linear-gradient(-45deg, #bb71f3 0%, #3d4d91 100%);
-    background: linear-gradient(135deg, #bb71f3 0%, #3d4d91 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bb71f3', endColorstr='#3d4d91', GradientType=1);
-    font-family: "Helvetica Neue", "Futura", "Trebuchet MS", Arial;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}*/
-
-
 /* Top Info */
+.a-enter-vr {
+    width: 40px;
+}
+//
+// .a-enter-vr-button {
+//     background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg…28.58C245.82%2C12.34%2C233.93%2C0%2C218.19%2C0H27.27Z%22%2F%3E%3C%2Fsvg%3E) 50% 50%/70% 70% no-repeat rgba(0,0,0,0);
+//     border: 0;
+//     bottom: 0;
+//     cursor: pointer;
+//     min-width: 50px;
+//     min-height: 30px;
+//     padding-right: 5%;
+//     padding-top: 4%;
+//     position: absolute;
+//     right: 0;
+//     transition: background-color .05s ease;
+//     -webkit-transition: background-color .05s ease;
+//     z-index: 9999;
+//     width: 30px;
+//     height: 55px;
+// }
 
 #title {
     position: absolute;
@@ -323,22 +317,34 @@ body {
     width: auto;
     height: 100%;
     position: absolute;
-    padding: 1rem;
+    // padding: 1rem;
     background: rgba(0, 0, 0, 1);
     // top: 50%;
     left: 0;
     // margin: -180px auto;
     overflow-y: scroll;
-    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    // padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
 }
 
 .list-thumb {
-    height: 200px;
-    width: 300px;
+    height: 350px;
+    width: 100%;
     background: url('../assets/images/dunes2.jpg');
     background-size: cover;
     display: block;
     // margin: 0 auto;
+    position: relative;
+}
+
+.list-head {
+    bottom: 15%;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    position: absolute;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    width: calc(100% - 2rem);
+    padding: 1rem;
 }
 
 .list-song {

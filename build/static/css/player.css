@@ -1,29 +1,7 @@
-/*html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    outline: 0;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    background: #bb71f3;
-    background: -moz-linear-gradient(-45deg, #bb71f3 0%, #3d4d91 100%);
-    background: -webkit-linear-gradient(-45deg, #bb71f3 0%, #3d4d91 100%);
-    background: linear-gradient(135deg, #bb71f3 0%, #3d4d91 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bb71f3', endColorstr='#3d4d91', GradientType=1);
-    font-family: "Helvetica Neue", "Futura", "Trebuchet MS", Arial;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}*/
 /* Top Info */
+.a-enter-vr {
+  width: 40px; }
+
 #title {
   position: absolute;
   width: 90%;
@@ -282,19 +260,27 @@ body {
   width: auto;
   height: 100%;
   position: absolute;
-  padding: 1rem;
   background: black;
   left: 0;
-  overflow-y: scroll;
-  padding-right: 17px;
-  /* Increase/decrease this value for cross-browser compatibility */ }
+  overflow-y: scroll; }
 
 .list-thumb {
-  height: 200px;
-  width: 300px;
+  height: 350px;
+  width: 100%;
   background: url("../assets/images/dunes2.jpg");
   background-size: cover;
-  display: block; }
+  display: block;
+  position: relative; }
+
+.list-head {
+  bottom: 15%;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  position: absolute;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  width: calc(100% - 2rem);
+  padding: 1rem; }
 
 .list-song {
   display: block;
